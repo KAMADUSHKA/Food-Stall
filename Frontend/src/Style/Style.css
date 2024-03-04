@@ -271,3 +271,14 @@
     margin: auto;
     margin-top: 10rem;
 }
+
+/*     */
+
+.main-slide{
+    padding-top: 30px;
+}
+
+.carousel .slider-wrapper{
+    width: 40%;
+}
+ 
