@@ -18,7 +18,6 @@ export default function Header() {
   // const user = useSelector((state) => state.auth.authData.userData?.fname);
   // const user = useSelector((state) => state.auth.authData.data?.email);
 
-
   // console.log("user is a", user);
 
   const handleChange = () => {
@@ -29,7 +28,10 @@ export default function Header() {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar
+          position="static"
+          sx={{ backgroundColor: "rgba(0, 255, 0, 0.3)" }}
+        >
           <Toolbar>
             <Avatar
               sx={{ height: 55, width: 55 }}
@@ -52,22 +54,33 @@ export default function Header() {
             {/* <Typography>Welcome {user}</Typography> */}
             <Typography>Welcome </Typography>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button variant="contained" onClick={handleChange} sx={{ borderRadius: 3,}} >
+            <Button
+              variant="contained"
+              onClick={handleChange}
+              sx={{ borderRadius: 3 }}
+            >
               Sign Out
             </Button>
           </Toolbar>
         </AppBar>
       </Box>
       <Box>
-        {/* <Search >
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search> */}
+        <AppBar
+          position="static"
+          sx={{
+            backgroundColor: "rgba(197, 235, 170, 0.08)",
+            borderRadius: 10,
+            marginTop: 5,
+          }}
+        >
+          <Toolbar sx={{ justifyContent: 'center' }}>
+           
+            <Typography sx={{ color: "black", mx: 4 }}>Welcome </Typography>
+            <Typography sx={{ color: "black", mx: 4 }}>Name1 </Typography>
+            <Typography sx={{ color: "black", mx: 4 }}>Name2 </Typography>
+            <Typography sx={{ color: "black", mx: 4 }}>Name3 </Typography>
+          </Toolbar>
+        </AppBar>
       </Box>
     </>
   );
