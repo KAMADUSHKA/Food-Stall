@@ -21,9 +21,10 @@ export default function Footer() {
                 backgroundColor: "rgb(39, 158, 255, 0.5 )",
                 height: 55,
                 width: 55,
-                marginLeft: 45,
+                marginLeft: 25,
                 marginTop: 3,
                 marginBottom: 3,
+                
               }}
               aria-label="recipe"
               src="https://dsuabgmmtxmj1.cloudfront.net/companyweb/adeona_new_logo_circle.png"
@@ -41,7 +42,7 @@ export default function Footer() {
             style={{
               display: "flex",
               marginRight: "auto",
-              marginLeft: 350,
+              marginLeft: 200,
               marginTop: 45,
             }}
           >

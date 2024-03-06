@@ -281,4 +281,28 @@
 .carousel .slider-wrapper{
     width: 40%;
 }
+  
+  /* @media (max-width: 600px) {
+    .custom-navbar {
+      
+    }
+    
+  } */
+
+  /* .active{
+    background-color: aquamarine;
+   } */
  
+  .nav_link{
+    color: rgba(7, 135, 7);
+    font-weight:bolder;
+    padding: 1rem;
+    margin: 1rem;
+    
+  }
+  
+  .nav_link:hover{
+    background-color: rgba(7, 135, 7, 0.2);
+    border-radius: 20px;
+    color: black;
+  }
