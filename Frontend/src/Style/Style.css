@@ -1,10 +1,11 @@
-#main{ 
+#main {
     text-align: center;
-   
+
 }
-#heading{
+
+#heading {
     text-align: center;
-    color:rgb(0, 1, 0);
+    color: rgb(0, 1, 0);
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
     font-size: 330%;
     font-weight: bold;
@@ -12,7 +13,7 @@
     font-family: EB Garamond;
 }
 
-#fieldsetLogin{
+#fieldsetLogin {
     height: 30%;
     width: 45%;
     margin: auto;
@@ -22,88 +23,89 @@
     box-shadow: 4px 4px 20px 2px #0d000bbe;
 }
 
-#login-btn{
+#login-btn {
     color: #DB15C1;
     border-radius: 20px;
     padding: 10px 20px;
     font-size: 160%;
     font-weight: bold;
     margin: 30px 20px 20px;
-    box-shadow: 2px 2px px  rgb(10, 0, 0);
+    box-shadow: 2px 2px px rgb(10, 0, 0);
 }
-#login-btn:hover{
+
+#login-btn:hover {
     /* background-color: rgba(0, 0, 255, 0.974); */
     color: black;
     transform: scale(1.1);
     transition: background-color 0.3s ease;
-    
+
 
 }
 
- #Login-form{
+#Login-form {
     margin: 40px 10px 10px;
- }
+}
 
- #input{
+#input {
     margin: 15px;
     font-size: 180%;
-    
- }
 
- 
+}
 
- /* #inputf{
+
+
+/* #inputf{
     font-size: 65%;
     border-radius: 20px;
     padding: 10px;
     background-color: #D9D9D9;
  } */
 
- #outlined-basic{
+#outlined-basic {
     border-radius: 40px;
- }
+}
 
 
-    /* Server page  */
-
-
-
+/* Server page  */
 
 
 
 
- 
 
-#main-Services{
+
+
+
+
+#main-Services {
     align-items: center;
     justify-content: center;
     height: 82rem;
     width: 76rem;
     margin: auto;
     margin-top: 4rem;
-    
+
 }
 
-#line1-Server{
+#line1-Server {
     height: 26rem;
     width: 76rem;
     display: flex;
     justify-content: space-between;
 }
 
-#line1-single-Server-Digibill{
+#line1-single-Server-Digibill {
     height: 24rem;
     width: 17.5rem;
-    background-color:rgb(251, 251, 251);
+    background-color: rgb(251, 251, 251);
     border-radius: 20px;
-    box-shadow: 0px 0px 2px 3px  rgb(10, 0, 0);
+    box-shadow: 0px 0px 2px 3px rgb(10, 0, 0);
     display: block;
-    
+
 }
 
 
 
-#line1-single-Server-Digibill:hover{
+#line1-single-Server-Digibill:hover {
     transition: 0.5s;
     background-color: #635d6247;
     transform: scale(1.1);
@@ -111,15 +113,15 @@
 }
 
 
-#line1-single-Server{
+#line1-single-Server {
     height: 24rem;
     width: 17.5rem;
     background-color: rgb(250, 251, 251);
     border-radius: 20px;
-    box-shadow: 0px 0px 2px 3px  rgb(10, 0, 0);
+    box-shadow: 0px 0px 2px 3px rgb(10, 0, 0);
 }
 
-#line1-single-Server:hover{
+#line1-single-Server:hover {
     transition: 0.5s;
     background-color: #635d6247;
     transform: scale(1.1);
@@ -129,7 +131,7 @@
 
 
 
-#Server-DigiBill-Image{
+#Server-DigiBill-Image {
     height: 17rem;
     width: auto;
     display: flex;
@@ -137,14 +139,16 @@
     align-items: center;
     margin: auto;
 }
-#Server-Text{
+
+#Server-Text {
     font-size: 3.2rem;
     text-align: center;
     display: flex;
     justify-content: center;
     font-weight: 400;
 }
-#Server-TextS{
+
+#Server-TextS {
     font-size: 2.3rem;
     text-align: center;
     display: flex;
@@ -152,7 +156,7 @@
     font-weight: 500;
 }
 
-#Server-SmartPose-Image{
+#Server-SmartPose-Image {
     height: 17rem;
     width: auto;
     display: flex;
@@ -161,7 +165,7 @@
     margin: auto;
 }
 
-#Server-SartMsg-Image{
+#Server-SartMsg-Image {
     height: 17rem;
     width: auto;
     display: flex;
@@ -170,7 +174,7 @@
     margin: auto;
 }
 
-#Server-CocaCola-Image{
+#Server-CocaCola-Image {
     height: 17rem;
     width: auto;
     display: flex;
@@ -180,14 +184,14 @@
 }
 
 
-#line2-Server{
+#line2-Server {
     height: 26rem;
     width: 76rem;
     display: flex;
     justify-content: space-between;
 }
 
-#Server-InnApp-Image{
+#Server-InnApp-Image {
     height: 17rem;
     width: auto;
     display: flex;
@@ -196,7 +200,7 @@
     margin: auto;
 }
 
-#Server-EBCM-Image{
+#Server-EBCM-Image {
     height: 18rem;
     width: auto;
     display: flex;
@@ -205,7 +209,7 @@
     margin: auto;
 }
 
-#Server-VCart-Image{
+#Server-VCart-Image {
     height: 18rem;
     width: auto;
     display: flex;
@@ -214,8 +218,8 @@
     margin: auto;
 }
 
-#Server-SmartCnt-Image{
-    
+#Server-SmartCnt-Image {
+
     height: 13.5rem;
     width: auto;
     display: flex;
@@ -226,7 +230,7 @@
 
 
 
-#line3-Server{
+#line3-Server {
     height: 26rem;
     width: 76rem;
     display: flex;
@@ -234,7 +238,7 @@
 }
 
 
-#Server-Add-Image{
+#Server-Add-Image {
     height: 8rem;
     width: auto;
     display: flex;
@@ -242,14 +246,14 @@
     align-items: center;
     margin: auto;
     opacity: 25%;
-    
+
 }
 
 
 
 
 
-     /*  DigiBill  */
+/*  DigiBill  */
 
 
 
@@ -261,7 +265,7 @@
 } */
 
 
-#tabel{
+#tabel {
     height: 30rem;
     width: 50rem;
     align-items: center;
@@ -274,35 +278,74 @@
 
 /*     */
 
-.main-slide{
+.main-slide {
     padding-top: 30px;
 }
 
-.carousel .slider-wrapper{
+.carousel .slider-wrapper {
     width: 40%;
 }
-  
-  /* @media (max-width: 600px) {
+
+/* @media (max-width: 600px) {
     .custom-navbar {
       
     }
     
   } */
 
-  /* .active{
+/* .active{
     background-color: aquamarine;
    } */
- 
-  .nav_link{
+
+.nav_link {
     color: rgba(7, 135, 7);
-    font-weight:bolder;
+    font-weight: bolder;
     padding: 1rem;
     margin: 1rem;
-    
-  }
-  
-  .nav_link:hover{
+
+}
+
+.nav_link:hover {
     background-color: rgba(7, 135, 7, 0.2);
     border-radius: 20px;
     color: black;
-  }
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+}
+
+.menu span {
+    height: 0.4rem;
+    width: 100%;
+    background-color: rgba(7, 135, 7);
+    border-radius: 0.2rem;
+}
+
+@media(max-width:920px) {
+    .menu {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: start;
+        /* background-color: #DB15C1; */
+    }
+    
+   .nav_link{
+    /* display: none; */
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.25rem;
+   }
+   
+}
+
