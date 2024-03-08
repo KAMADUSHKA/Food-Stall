@@ -266,8 +266,66 @@ export default function Dashbord() {
         >
           NUTRITION MEAL PLANS
         </Typography>
+
         <br />
         <br />
+
+
+
+        <Grid container spacing={2} marginTop={3} marginBottom={3}>
+        <Grid key={Key} item xs={12} sm={6} md={4} lg={4} xl={3}>
+      <Card
+        sx={{
+          Width: 345,
+          height: 330,
+          borderRadius: 6,
+          // backgroundColor: "rgba(197, 235, 170, 0.1)",
+          // border: "1px solid rgba(0, 0, 0, 0.1)",
+        }}
+        elevation={0}
+      >
+        <Box
+          sx={{ height: 280, padding: 2 }}
+          // onClick={() => {
+          //   navigate(`/DigiBill/${item.card_id}`);
+          // }}
+        >
+          <CardHeader
+            sx={{
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: "center",
+              height: 80,
+              overflow: "hidden",
+            }}
+            title={
+              <Typography gutterBottom variant="h4" component="h2">
+              cardName
+              </Typography>
+            }
+           
+          />
+          
+          <Box
+            sx={{
+              // backgroundColor: "rgba(255, 255, 255, 0.8)",
+              height: 180,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 5,
+            }}
+          >
+            <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e" height="auto" width="300px" style={{ borderRadius: '10px' }} />
+          </Box>
+        </Box>
+        
+      </Card>
+      
+    </Grid>
+        </Grid>
+
+
 
         <Grid container spacing={2} marginTop={3} marginBottom={3}>
           {CardData.map((card, key) => cardData(card, key))}
