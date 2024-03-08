@@ -209,7 +209,7 @@ export default function Dashbord() {
       <br />
       <br />
       <Container>
-        {/* <Typography
+        <Typography
           variant="h2"
           align="center"
           gutterBottom
@@ -223,7 +223,7 @@ export default function Dashbord() {
           OUR PROCESS
         </Typography>
         <br />
-        <br /> */}
+        <br />
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <ImageList
@@ -249,7 +249,7 @@ export default function Dashbord() {
           </Grid>
         </Grid>
 
-        {/* <br />
+        <br />
         <br />
         <br />
         <br />
@@ -267,7 +267,7 @@ export default function Dashbord() {
           NUTRITION MEAL PLANS
         </Typography>
         <br />
-        <br /> */}
+        <br />
 
         <Grid container spacing={2} marginTop={3} marginBottom={3}>
           {CardData.map((card, key) => cardData(card, key))}
