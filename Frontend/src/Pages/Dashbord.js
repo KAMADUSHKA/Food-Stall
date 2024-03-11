@@ -366,6 +366,24 @@ export default function Dashbord() {
         <br />
         <br />
         <br />
+        <Typography
+          variant="h2"
+          align="center"
+          gutterBottom
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "Cormorant Garamond, serif",
+            color: "rgb(18, 104, 18)",
+            textShadow: "2px 45px 4px rgba(18,104,18,0.1)",
+          }}
+        >
+          YOUR HEALTH GOALS
+        </Typography>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <Typography
           variant="h2"
@@ -387,6 +405,8 @@ export default function Dashbord() {
           {/* {data.map((card) => cardData(card, card.card_id))} */}
         </Grid>
       </Container>
+
+      
     </>
   );
 }
