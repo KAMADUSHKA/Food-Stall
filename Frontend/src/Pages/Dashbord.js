@@ -16,7 +16,7 @@ import {
   Typography,
 } from "@mui/material";
 import "../Style/Style.css";
-import { Key } from "@mui/icons-material";
+import { Bolt, Key } from "@mui/icons-material";
 import P1 from "../Image/P1.jpg";
 import P2 from "../Image/P2.jpg";
 import P3 from "../Image/P3.jpg";
@@ -93,6 +93,20 @@ const itemData = [
     title: "Enjoy Your Meals",
   },
 ];
+const NutritionistData = [
+  {
+    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    title: "MySelf",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    title: "Childrem",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    title: "Family",
+  },
+];
 
 export default function Dashbord() {
   const cardData = (item, key) => (
@@ -162,6 +176,84 @@ export default function Dashbord() {
       </Card>
     </Grid>
   );
+  const NutritionistCard = (item, key) => (
+    <Grid key={Key} item xs={12} sm={6} md={4} lg={4} xl={4}>
+      <Card
+        className="nutritionMeal-card"
+        sx={{
+          Width: 345,
+          height: 330,
+          borderRadius: 6,
+          // backgroundColor: "rgba(197, 235, 170, 0.1)",
+          // border: "1px solid rgba(0, 0, 0, 0.1)",
+        }}
+        elevation={0}
+      >
+        <Box
+          sx={{ height: 280, padding: 2, position: "relative" }}
+          // onClick={() => {
+          //   navigate(`/DigiBill/${item.card_id}`);
+          // }}
+        >
+          <CardHeader
+            sx={{
+              flexDirection: "column",
+              justifyContent: "center",
+              textAlign: "center",
+              height: 80,
+              overflow: "hidden",
+            }}
+            title={
+              <Typography
+                className="nutritionMeal-card-title"
+                gutterBottom
+                variant="h4"
+                component="h2"
+              >
+                {item.title}
+              </Typography>
+            }
+          />
+          <CardActionArea>
+            <Box
+              sx={{
+                // backgroundColor: "rgba(255, 255, 255, 0.8)",
+                height: 180,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 5,
+              }}
+            >
+              <img
+                src={item.img}
+                className="nutritionMeal-card-img"
+                height="auto"
+                width="300px"
+                style={{ borderRadius: "10px" }}
+              />
+              {/* <div className="overlay"></div> */}
+              <Typography
+                variant="h3"
+                className="img-title"
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  color: "rgb(18, 104, 18)",
+                  // backgroundColor:"black",
+                  fontWeight: "bold",
+                }}
+              >
+                {item.title}
+              </Typography>
+            </Box>
+          </CardActionArea>
+        </Box>
+      </Card>
+    </Grid>
+  );
 
   return (
     <>
@@ -181,24 +273,25 @@ export default function Dashbord() {
           showThumbs={false}
           showStatus={false}
           // dotColor="rgba(0, 255, 0)"
+        
         >
           <div>
             <img
-              src="https://cdn141.picsart.com/317513228192211.png?to=crop&type=webp&r=1456x1456&q=85"
+              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
               height="auto"
               width="200px"
             />
           </div>
           <div>
             <img
-              src="https://cdn130.picsart.com/249619770004212.png?to=crop&type=webp&r=1456x1147&q=85"
+              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
               height="auto"
               width="200px"
             />
           </div>
           <div>
             <img
-              src="https://cdn130.picsart.com/289328266010211.png?to=crop&type=webp&r=1456x712&q=85"
+              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
               height="auto"
               width="200px"
             />
@@ -248,7 +341,7 @@ export default function Dashbord() {
             </ImageList>
           </Grid>
         </Grid>
-
+        <br />
         <br />
         <br />
         <br />
@@ -266,67 +359,29 @@ export default function Dashbord() {
         >
           NUTRITION MEAL PLANS
         </Typography>
-
         <br />
-        <br />
-
-
-
         <Grid container spacing={2} marginTop={3} marginBottom={3}>
-        <Grid key={Key} item xs={12} sm={6} md={4} lg={4} xl={3}>
-      <Card
-        sx={{
-          Width: 345,
-          height: 330,
-          borderRadius: 6,
-          // backgroundColor: "rgba(197, 235, 170, 0.1)",
-          // border: "1px solid rgba(0, 0, 0, 0.1)",
-        }}
-        elevation={0}
-      >
-        <Box
-          sx={{ height: 280, padding: 2 }}
-          // onClick={() => {
-          //   navigate(`/DigiBill/${item.card_id}`);
-          // }}
-        >
-          <CardHeader
-            sx={{
-              flexDirection: "column",
-              justifyContent: "center",
-              textAlign: "center",
-              height: 80,
-              overflow: "hidden",
-            }}
-            title={
-              <Typography gutterBottom variant="h4" component="h2">
-              cardName
-              </Typography>
-            }
-           
-          />
-          
-          <Box
-            sx={{
-              // backgroundColor: "rgba(255, 255, 255, 0.8)",
-              height: 180,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 5,
-            }}
-          >
-            <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e" height="auto" width="300px" style={{ borderRadius: '10px' }} />
-          </Box>
-        </Box>
-        
-      </Card>
-      
-    </Grid>
+          {NutritionistData.map((card, key) => NutritionistCard(card, key))}
         </Grid>
-
-
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <Typography
+          variant="h2"
+          align="center"
+          gutterBottom
+          sx={{
+            fontWeight: "bold",
+            fontFamily: "Cormorant Garamond, serif",
+            color: "rgb(18, 104, 18)",
+            textShadow: "2px 45px 4px rgba(18,104,18,0.1)",
+          }}
+        >
+          Meal Plans
+        </Typography>
+        <br />
+        <br />
         <Grid container spacing={2} marginTop={3} marginBottom={3}>
           {CardData.map((card, key) => cardData(card, key))}
           {/* {data.map((card) => cardData(card, card.card_id))} */}

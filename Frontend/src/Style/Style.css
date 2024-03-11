@@ -283,13 +283,15 @@
 }
 
 .carousel .slider-wrapper {
-    width: 40%;
+    width: 85%;
 }
 
 .main-slide .carousel .control-dots .dot {
-    background-color: rgb(18, 104, 18); 
-  }
-  
+    background-color: rgb(3, 50, 3);
+    width: 12px; 
+    height: 12px;
+}
+
 
 /* @media (max-width: 600px) {
     .custom-navbar {
@@ -344,13 +346,65 @@
         align-items: start;
         /* background-color: #DB15C1; */
     }
-    
-   .nav_link{
-    /* display: none; */
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 0.25rem;
-   }
-   
+
+    .nav_link {
+        /* display: none; */
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
 }
 
+
+.nutritionMeal-card-img {
+    position: relative;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    /* Add transition for width change */
+}
+
+/* .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+  } */
+
+.img-title {
+    display: none;
+    border-radius: 10px;
+    background-color:  rgba(236, 235, 235, 0.5);
+    padding: 8px 1.5px 8px 1.5px;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+.nutritionMeal-card:hover {
+
+    /* background-color: rgb(241, 246, 241); */
+    .nutritionMeal-card-title {
+        display: none;
+    }
+
+    .nutritionMeal-card-img {
+        width: 320px;
+        /* Increase the width on hover */
+        height: auto;
+        /* Maintain aspect ratio */
+        border-radius: 20px;
+        opacity: 0.9;
+        /* background-color: black; */
+    }
+
+    /* .overlay {
+        opacity: 1; 
+      } */
+
+    .img-title {
+        display: flex;
+    }
+}
