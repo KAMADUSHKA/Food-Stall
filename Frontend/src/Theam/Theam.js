@@ -7,7 +7,7 @@ export const ModifiedTextField = styled(TextField)({
     
   },
   "& .MuiOutlinedInput-notchedOutline": {
-    borderColor: "blue",
+    borderColor: "rgb(18, 104, 18)",
   },
   "&.MuiInputBase-multiline": {
     padding: 1,

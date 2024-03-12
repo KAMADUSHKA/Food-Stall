@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
+
 const pages = [
   "Home",
   "Plans and Diets",
@@ -97,7 +98,7 @@ export default function Header() {
                 <MenuItem
                   key={page}
                   onClick={() => {
-                    handleCloseNavMenu(); // Close the navigation menu
+                    handleCloseNavMenu(); 
                     if (page === "Home") {
                       window.location.href = "/"; // Navigate to "/Plans_and_Diets" for the "Blog" button
                     }
@@ -191,7 +192,16 @@ export default function Header() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} 
+                onClick={() => {
+                  if (setting === "LogIn") {
+                    window.location.href = "/Login"; 
+                  }
+                  if (setting === "Profile") {
+                    window.location.href = "/Profile"; 
+                  }
+                }}
+                >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

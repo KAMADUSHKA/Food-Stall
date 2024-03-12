@@ -5,6 +5,8 @@ import Plans_and_Diets from "../Pages/Plans_and_Diets";
 import Custom_Meals from "../Pages/Custom_Meals";
 import Quick_Check_Out from "../Pages/Quick_Check_Out";
 import Channel_Nutritionist from "../Pages/Channel_Nutritionist";
+import Login from "../Pages/Login";
+import Profile from "../Pages/Profile";
 // import Dashbord from "../Pages/Dashbord";
 
 
@@ -27,16 +29,24 @@ const UserAuthorizedRoutes = [
         element: <Plans_and_Diets/>,
       },
       {
-        path:"Custom_Meals",
+        path:"/Custom_Meals",
         element:<Custom_Meals/> 
       },
       {
-        path:"Quick_Check_Out",
+        path:"/Quick_Check_Out",
         element:<Quick_Check_Out/> 
       },
       {
-        path:"Channel_Nutritionist",
+        path:"/Channel_Nutritionist",
         element:<Channel_Nutritionist/> 
+      },
+      {
+        path:"/Login",
+        element:<Login/>
+      },
+      {
+        path:"/Profile",
+        element:<Profile/>
       },
       {
         path:"*",

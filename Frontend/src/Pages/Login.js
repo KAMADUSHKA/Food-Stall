@@ -27,7 +27,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  // const setLoading = (false)
+
 
   const theme = useTheme();
   const matchDownSM = useMediaQuery(theme.breakpoints.down("md"));
@@ -48,28 +48,6 @@ export default function Login() {
     setShowPassword(!showPassword);
   };
 
-  // const handleCreating = (values) => {
-  //   setLoading(true);
-  //   services.cardCreat(values).then((response) => {
-  //     if (response.isSuccess) {
-  //       console.log("card Data:", values);
-  //       navigate("/Cards");
-  //       alert("your card create successfully");
-  //     } else {
-  //       console.log("add card respons error");
-  //     }
-
-  //     setLoading(false);
-  //   });
-  // };
-
-
-
-  // const handleLogin = (values, setSubmitting) => {
-  //   setSubmitting(false);
-  //   console.log("User Data:", values);
-  //   navigate("/Cards");
-  // };
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().max(255).required("User mail is required"),
@@ -105,7 +83,7 @@ export default function Login() {
         }) => (
           <form noValidate onSubmit={handleSubmit}>
             <Grid container justifyContent="center" alignItems="center">
-              <Grid item sx={{ m: { xs: 1, sm: 3 }, mb: 0 }}>
+              <Grid item sx={{ m: { xs: 3, sm: 3 }, mb: 0 }}>
                 <Paper elevation={10} sx={paperStyle}>
                   <Grid align={"center"} marginTop={4}>
                     <img alt="" src={AdeonaLogo} height={70} width={110} />
@@ -118,11 +96,11 @@ export default function Login() {
                       >
                         <Typography
                           fontWeight="bold"
-                          color={theme.palette.primary.main}
+                          color= "rgb(18, 104, 18)"
                           gutterBottom
                           variant={matchDownSM ? "h3" : "h2"}
                         >
-                          Hi, Welcome
+                          Hi, Welcome to Food Stall
                         </Typography>
                         <Typography
                           variant="caption"
@@ -184,7 +162,7 @@ export default function Login() {
                       type="submit"
                       variant="contained"
                       fullWidth
-                      sx={{ borderRadius: 3 }}
+                      sx={{ borderRadius: 3, backgroundColor:"rgb(18, 104, 18)" }}
                     >
                       LOGIN
                     </Button>
