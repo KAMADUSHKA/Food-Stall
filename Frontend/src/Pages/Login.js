@@ -11,6 +11,8 @@ import {
   Stack,
   Typography,
   useMediaQuery,
+  Avatar,
+  Box,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { ModifiedTextField } from "../Theam/Theam";
@@ -21,13 +23,12 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { handleLogin } from "./handleLogin";
 import Loade from "../componant/Loader";
-import { services } from "../Services/services"
+import { services } from "../Services/services";
 
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-
 
   const theme = useTheme();
   const matchDownSM = useMediaQuery(theme.breakpoints.down("md"));
@@ -48,7 +49,6 @@ export default function Login() {
     setShowPassword(!showPassword);
   };
 
-
   const validationSchema = Yup.object().shape({
     username: Yup.string().max(255).required("User mail is required"),
     password: Yup.string()
@@ -62,6 +62,27 @@ export default function Login() {
 
   return (
     <>
+      <Button
+        variant="contained"
+        sx={{
+          marginTop: 4,
+          marginLeft: 4,
+          borderRadius: 5,
+          paddingLeft: 1,
+          paddingRight: 1,
+          paddingTop: 0.5,
+          paddingBottom: 0.5,
+          backgroundColor: "rgb(216, 0, 50, 0.2)",
+          color: "red",
+          fontSize: 16,
+          border: "1px solid red",
+        }}
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        <b> {" < "} back </b>
+      </Button>
       <Formik
         initialValues={{ username: "", password: "" }}
         validationSchema={validationSchema}
@@ -69,7 +90,6 @@ export default function Login() {
           setSubmitting(false);
           setLoading(true);
           dispatch(handleLogin(values, setSubmitting, navigate, setLoading));
-    
         }}
       >
         {({
@@ -85,8 +105,14 @@ export default function Login() {
             <Grid container justifyContent="center" alignItems="center">
               <Grid item sx={{ m: { xs: 3, sm: 3 }, mb: 0 }}>
                 <Paper elevation={10} sx={paperStyle}>
-                  <Grid align={"center"} marginTop={4}>
-                    <img alt="" src={AdeonaLogo} height={70} width={110} />
+                  <Grid align={"center"} marginTop={1}>
+                    {/* <img alt="" src={AdeonaLogo} height={70} width={110} /> */}
+                    <Avatar
+                      alt="Remy Sharp"
+                      src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg&ga=GA1.1.972764281.1692088791&semt=ais"
+                      sx={{ width: 150, height: 150 ,border: '1px solid #000',}}
+                     
+                    />
                     <Typography fontSize="40px">Login</Typography>
                     <Grid item>
                       <Stack
@@ -96,7 +122,7 @@ export default function Login() {
                       >
                         <Typography
                           fontWeight="bold"
-                          color= "rgb(18, 104, 18)"
+                          color="rgb(18, 104, 18)"
                           gutterBottom
                           variant={matchDownSM ? "h3" : "h2"}
                         >
@@ -113,7 +139,7 @@ export default function Login() {
                     </Grid>
                     <br />
                     <ModifiedTextField
-                    type="email"
+                      type="email"
                       id="outlined-basic"
                       label="User Email"
                       name="username"
@@ -127,7 +153,7 @@ export default function Login() {
                       error={Boolean(touched.username && errors.username)}
                     />
                     <br />
-                    <br />
+                   
                     <ModifiedTextField
                       id="outlined-basic"
                       label="Password"
@@ -162,10 +188,46 @@ export default function Login() {
                       type="submit"
                       variant="contained"
                       fullWidth
-                      sx={{ borderRadius: 3, backgroundColor:"rgb(18, 104, 18)" }}
+                      sx={{
+                        borderRadius: 3,
+                        backgroundColor: "rgb(18, 104, 18)",
+                      }}
                     >
                       LOGIN
                     </Button>
+                    <Box sx={{marginTop:2, display: 'flex', justifyContent:"space-between"}}>
+                    <Button
+                      disabled={isSubmitting}
+                      type="submit"
+                      variant="text"
+                      fullWidth
+                      onClick={() => {
+                        navigate("/");
+                      }}
+                      sx={{
+                        borderRadius: 3,
+                        fontSize:10,
+                        color:"rgb(18, 104, 18)"
+                        // backgroundColor: "rgb(18, 104, 18)",
+                      }}
+                    >
+                      Forget Password
+                    </Button><Button
+                      disabled={isSubmitting}
+                      type="submit"
+                      variant="text"
+                      fullWidth
+                      onClick={() => {
+                        navigate("/SingUp");
+                      }}
+                      sx={{
+                        borderRadius: 3,
+                        // backgroundColor: "rgb(18, 104, 18)",
+                      }}
+                    >
+                      Sign Up
+                    </Button>
+                    </Box>
                   </Grid>
                 </Paper>
               </Grid>

@@ -1,36 +1,43 @@
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, CardHeader, Container, Divider, Grid, IconButton, InputAdornment, Paper, Stack, Typography, useMediaQuery } from '@mui/material';
-import React, { useState } from 'react'
-import { ModifiedTextField } from '../Theam/Theam';
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { ModifiedTextField } from '../Theam/Theam';
 import { useDispatch } from 'react-redux';
 import { useTheme } from '@emotion/react';
 import * as Yup from "yup";
 import { Form, Formik } from 'formik';
-
-export default function Profile() {
-  const navigate = useNavigate();
-
-  const initialValues = {
-    // departmentID: "",
-    BirthYear: "",
-    Height: "",
-    Weight: "",
-    Gender: ""
-
-  };
-
-  const validationSchema = Yup.object().shape({
-    // departmentID: Yup.string().required("Emplyee ID is required"),
-    FirstName: Yup.string().required("First Name is required"),
-    LastName:Yup.string().required("Last Name is required"),
-  });
+import { Box, Button, Card, CardContent, CardHeader, Container, Divider, Grid, Stack } from '@mui/material';
 
 
-  const handleCreating = (values) => {
-    console.log("valuse : ", values);
-  };
+export default function SingUp() {
 
+    const navigate = useNavigate();
+
+    const initialValues = {
+      // departmentID: "",
+      FirstName: "",
+      LastName: "",
+      Mobile: "",
+      Password: "",
+      ReEnterPassword:""
+
+  
+    };
+  
+    const validationSchema = Yup.object().shape({
+      // departmentID: Yup.string().required("Emplyee ID is required"),
+      FirstName: Yup.string().required("First Name is required"),
+      LastName:Yup.string().required("Last Name is required"),
+      Mobile:Yup.string().required("Last Name is required"),
+      Password:Yup.string().required("Last Name is required"),
+      ReEnterPassword:Yup.string().required("Last Name is required")
+    });
+  
+  
+    const handleCreating = (values) => {
+      console.log("valuse : ", values);
+      navigate("/SingUpOTP");
+    };
+  
   return (
     <>
      <Card
@@ -46,7 +53,7 @@ export default function Profile() {
       >
         <Formik
           initialValues={initialValues}
-          validationSchema={validationSchema}
+        //   validationSchema={validationSchema}
           onSubmit={(values) => handleCreating(values)}
         >
           {({
@@ -137,7 +144,7 @@ export default function Profile() {
                                   <Grid item xs={12} sm={6} md={6} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
-                                      label="First Name"
+                                      label="Last Name"
                                       name="LastName"
                                       value={values.LastName}
                                       onBlur={handleBlur}
@@ -150,8 +157,56 @@ export default function Profile() {
                                       // required
                                     />
                                   </Grid>
+                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                    <ModifiedTextField
+                                      fullWidth
+                                      label="Mobile Number"
+                                      name="Mobile"
+                                      value={values.Mobile}
+                                      onBlur={handleBlur}
+                                      helperText={errors.Mobile}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.Mobile &&
+                                          errors.Mobile
+                                      )}
+                                      // required
+                                    />
+                                  </Grid>
+                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                    <ModifiedTextField
+                                      fullWidth
+                                      label="Password"
+                                      name="Password"
+                                      value={values.Password}
+                                      onBlur={handleBlur}
+                                      helperText={errors.Password}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.Password &&
+                                          errors.Password
+                                      )}
+                                      // required
+                                    />
+                                  </Grid>
+                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                    <ModifiedTextField
+                                      fullWidth
+                                      label="Re Enter Password"
+                                      name="ReEnterPassword"
+                                      value={values.ReEnterPassword}
+                                      onBlur={handleBlur}
+                                      helperText={errors.ReEnterPassword}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.ReEnterPassword &&
+                                          errors.ReEnterPassword
+                                      )}
+                                      // required
+                                    />
+                                  </Grid>
 
-                                  <Divider />
+                                  <Divider/>
                                   <Button
                                     type="submit"
                                     variant="contained"
@@ -165,7 +220,7 @@ export default function Profile() {
                                       backgroundColor:"rgb(18, 104, 18)",
                                     }}
                                   >
-                                    Create Profile
+                                    SingUp
                                   </Button>
                                 </Grid>
                               </Box>

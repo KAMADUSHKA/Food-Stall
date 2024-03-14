@@ -378,8 +378,9 @@
     display: none;
     border-radius: 10px;
     background-color:  rgba(236, 235, 235, 0.5);
-    padding: 8px 1.5px 8px 1.5px;
+    padding: 8px 1.9px 8px 1.8px;
     text-shadow: 1px 1px 1px black;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 

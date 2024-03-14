@@ -7,6 +7,8 @@ import Quick_Check_Out from "../Pages/Quick_Check_Out";
 import Channel_Nutritionist from "../Pages/Channel_Nutritionist";
 import Login from "../Pages/Login";
 import Profile from "../Pages/Profile";
+import SingUp from "../Pages/SingUp";
+import SingUpOTP from "../Pages/SingUpOTP";
 // import Dashbord from "../Pages/Dashbord";
 
 
@@ -47,6 +49,14 @@ const UserAuthorizedRoutes = [
       {
         path:"/Profile",
         element:<Profile/>
+      },
+      {
+        path:"/SingUp",
+        element:<SingUp/>
+      },
+      {
+        path:"/SingUpOTP",
+        element:<SingUpOTP/>
       },
       {
         path:"*",
