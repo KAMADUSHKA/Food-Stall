@@ -107,7 +107,7 @@ export default function SingUp() {
                       >
                         <Grid item xs={12} md={7} lg={7} xl={8} margin={2}>
                           <Card sx={{ borderRadius: 6 }} elevation={10}>
-                            <CardHeader title="ADD PROFILE"></CardHeader>
+                            <CardHeader title="SIGN UP"></CardHeader>
                             <hr
                               style={{
                                 color: "white",
@@ -206,7 +206,8 @@ export default function SingUp() {
                                     />
                                   </Grid>
 
-                                  <Divider/>
+                                  
+                                  <Grid item xs={12} sm={12} md={12} padding={1} sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                                   <Button
                                     type="submit"
                                     variant="contained"
@@ -222,6 +223,7 @@ export default function SingUp() {
                                   >
                                     SingUp
                                   </Button>
+                                  </Grid>
                                 </Grid>
                               </Box>
                             </CardContent>
