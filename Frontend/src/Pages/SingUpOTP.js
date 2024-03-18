@@ -12,27 +12,27 @@ export default function SingUpOTP() {
   const initialValues = {
     // departmentID: "",
     NO_1: "",
-    LastName: "",
-    Mobile: "",
-    Password: "",
-    ReEnterPassword:""
+    No_2: "",
+    No_3: "",
+    No_4: "",
+    No_5:""
 
 
   };
 
   const validationSchema = Yup.object().shape({
     // departmentID: Yup.string().required("Emplyee ID is required"),
-    NO_1: Yup.string().required("First Name is required"),
-    LastName:Yup.string().required("Last Name is required"),
-    Mobile:Yup.string().required("Last Name is required"),
-    Password:Yup.string().required("Last Name is required"),
-    ReEnterPassword:Yup.string().required("Last Name is required")
+    NO_1: Yup.string().required("required"),
+    No_2:Yup.string().required("required"),
+    No_3:Yup.string().required("required"),
+    No_4:Yup.string().required("required"),
+    No_5:Yup.string().required("required")
   });
 
 
   const handleCreating = (values) => {
     console.log("valuse : ", values);
-    navigate("/SingUpOTP");
+    navigate("/Profile");
   };
 
   return (
@@ -50,7 +50,7 @@ export default function SingUpOTP() {
       >
         <Formik
           initialValues={initialValues}
-        //   validationSchema={validationSchema}
+          validationSchema={validationSchema}
           onSubmit={(values) => handleCreating(values)}
         >
           {({
@@ -100,18 +100,18 @@ export default function SingUpOTP() {
                       <Grid
                         container
                         spacing={2}
-                        sx={{ justifyContent: "space-around" }}
+                        sx={{ justifyContent: "space-around"  }}
                       >
                         <Grid item xs={12} md={7} lg={7} xl={8} margin={2}>
                           <Card sx={{ borderRadius: 6 }} elevation={10}>
-                            <CardHeader title="ADD PROFILE"></CardHeader>
-                            <hr
+                            {/* <CardHeader title="ADD PROFILE"></CardHeader> */}
+                            {/* <hr
                               style={{
                                 color: "white",
                                 marginLeft: 15,
                                 marginRight: 15,
                               }}
-                            />
+                            /> */}
                             <CardContent>
                               <Box
                                 sx={{
@@ -120,17 +120,18 @@ export default function SingUpOTP() {
                                   flexDirection: "column",
                                 }}
                               >
-                                <Grid container spacing={1}>
+                                <Grid container spacing={1}  sx={{display: "flex", justifyContent: "center",  textAlign: "center" }}>
                                 <Grid item xs={12} sm={12} md={12} padding={1} sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                                   <Button
-                                    type="submit"
+                                    // type="submit"
                                     variant="outlined"
-                                    disabled={!(isValid || isSubmitting)}
+                                    // disabled={!(isValid || isSubmitting)}
                                     sx={{
                                       flexDirection: "column",
                                       justifyContent: "center",
                                       textAlign: "center",
-                                      margin: "auto",
+                                      marginBottom: 10,
+                                      // margin: "auto",
                                       borderRadius: 3,
                                       color:"rgb(18, 104, 18)",
                                       borderColor: "rgb(18, 104, 18)"
@@ -141,8 +142,9 @@ export default function SingUpOTP() {
                                   </Button>
                                   </Grid>
                                   <Divider/>
+                                  
                             
-                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                  <Grid item xs={2.3} sm={1.8} md={2} lg={1.5} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
                                       label=""
@@ -164,72 +166,94 @@ export default function SingUpOTP() {
                                       // required
                                     />
                                   </Grid>
-                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                  <Grid item xs={2.3} sm={1.8} md={2} lg={1.5} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
-                                      label="Last Name"
-                                      name="LastName"
-                                      value={values.LastName}
+                                      label=""
+                                      name="No_2"
+                                      value={values.No_2}
                                       onBlur={handleBlur}
-                                      helperText={errors.LastName}
-                                      onChange={handleChange}
+                                      helperText={errors.No_2}
+                                      // onChange={handleChange}
+                                      onChange={(e) => {
+                                        if (/^\d{0,1}$/.test(e.target.value)) {
+                                          handleChange(e);
+                                        }
+                                      }}
                                       error={Boolean(
-                                        touched.LastName &&
-                                          errors.LastName
+                                        touched.No_2 &&
+                                          errors.No_2
                                       )}
                                       // required
                                     />
                                   </Grid>
-                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                  <Grid item xs={2.3} sm={1.8} md={2} lg={1.5} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
-                                      label="Mobile Number"
-                                      name="Mobile"
-                                      value={values.Mobile}
+                                      label=""
+                                      name="No_3"
+                                      value={values.No_3}
                                       onBlur={handleBlur}
-                                      helperText={errors.Mobile}
-                                      onChange={handleChange}
+                                      helperText={errors.No_3}
+                                      // onChange={handleChange}
+                                      onChange={(e) => {
+                                        if (/^\d{0,1}$/.test(e.target.value)) {
+                                          handleChange(e);
+                                        }
+                                      }}
                                       error={Boolean(
-                                        touched.Mobile &&
-                                          errors.Mobile
+                                        touched.No_3 &&
+                                          errors.No_3
                                       )}
                                       // required
                                     />
                                   </Grid>
-                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                  <Grid item xs={2.3} sm={1.8} md={2} lg={1.5} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
-                                      label="Password"
-                                      name="Password"
-                                      value={values.Password}
+                                      label=""
+                                      name="No_4"
+                                      value={values.No_4}
                                       onBlur={handleBlur}
-                                      helperText={errors.Password}
-                                      onChange={handleChange}
+                                      helperText={errors.No_4}
+                                      // onChange={handleChange}
+                                      onChange={(e) => {
+                                        if (/^\d{0,1}$/.test(e.target.value)) {
+                                          handleChange(e);
+                                        }
+                                      }}
                                       error={Boolean(
-                                        touched.Password &&
-                                          errors.Password
+                                        touched.No_4 &&
+                                          errors.No_4
                                       )}
                                       // required
                                     />
                                   </Grid>
-                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                  <Grid item xs={2.3} sm={1.8} md={2} lg={1.5} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
-                                      label="Re Enter Password"
-                                      name="ReEnterPassword"
-                                      value={values.ReEnterPassword}
+                                      label=""
+                                      name="No_5"
+                                      value={values.No_5}
                                       onBlur={handleBlur}
-                                      helperText={errors.ReEnterPassword}
-                                      onChange={handleChange}
+                                      helperText={errors.No_5}
+                                      // onChange={handleChange}
+                                      onChange={(e) => {
+                                        if (/^\d{0,1}$/.test(e.target.value)) {
+                                          handleChange(e);
+                                        }
+                                      }}
                                       error={Boolean(
-                                        touched.ReEnterPassword &&
-                                          errors.ReEnterPassword
+                                        touched.No_5 &&
+                                          errors.No_5
                                       )}
                                       // required
                                     />
                                   </Grid>
 
                                   <Divider/>
+                                  <br/>
+                                  <br/>
                                   <Grid item xs={12} sm={12} md={12} padding={1} sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                                   <Button
                                     type="submit"
@@ -239,7 +263,8 @@ export default function SingUpOTP() {
                                       flexDirection: "column",
                                       justifyContent: "center",
                                       textAlign: "center",
-                                      margin: "auto",
+                                     marginTop: 10,
+                                      // margin: "auto",
                                       borderRadius: 3,
                                       backgroundColor:"rgb(18, 104, 18)",
                                     }}
