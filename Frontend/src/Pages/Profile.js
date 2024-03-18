@@ -1,12 +1,35 @@
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Box, Button, Card, CardContent, CardHeader, Container, Divider, Grid, IconButton, InputAdornment, Paper, Stack, Typography, useMediaQuery } from '@mui/material';
-import React, { useState } from 'react'
-import { ModifiedTextField } from '../Theam/Theam';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { useTheme } from '@emotion/react';
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Checkbox,
+  Container,
+  Divider,
+  FormControl,
+  FormControlLabel,
+  FormGroup,
+  FormLabel,
+  Grid,
+  IconButton,
+  InputAdornment,
+  Paper,
+  Radio,
+  RadioGroup,
+  Stack,
+  Switch,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import React, { useState } from "react";
+import { ModifiedTextField } from "../Theam/Theam";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useTheme } from "@emotion/react";
 import * as Yup from "yup";
-import { Form, Formik } from 'formik';
+import { Form, Formik } from "formik";
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -16,16 +39,20 @@ export default function Profile() {
     BirthYear: "",
     Height: "",
     Weight: "",
-    Gender: ""
-
+    Gender: "",
+    Allergies: "",
+    sick: [],
   };
 
   const validationSchema = Yup.object().shape({
     // departmentID: Yup.string().required("Emplyee ID is required"),
-    FirstName: Yup.string().required("First Name is required"),
-    LastName:Yup.string().required("Last Name is required"),
+    BirthYear: Yup.string().required("First BirthYear is required"),
+    Height: Yup.string().required("Last Height is required"),
+    Weight: Yup.string().required("First Weight is required"),
+    // Gender: Yup.boolean().required("Gender is required"),
+    Allergies: Yup.string().required("First Allergies is required"),
+    // sick: Yup.array().min(1, "Select at least one sickness"),
   });
-
 
   const handleCreating = (values) => {
     console.log("valuse : ", values);
@@ -33,14 +60,14 @@ export default function Profile() {
 
   return (
     <>
-     <Card
+      <Card
         sx={{
           borderRadius: 10,
           backgroundColor: "rgb(180, 180, 179, 0.5 )",
           marginLeft: 4,
           marginRight: 4,
-          marginTop:4,
-          marginBottom:4,
+          marginTop: 4,
+          marginBottom: 4,
         }}
         elevation={2}
       >
@@ -117,19 +144,17 @@ export default function Profile() {
                                 }}
                               >
                                 <Grid container spacing={1}>
-                            
                                   <Grid item xs={12} sm={6} md={6} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
-                                      label="First Name"
-                                      name="FirstName"
-                                      value={values.FirstName}
+                                      label="Birth Year"
+                                      name="BirthYear"
+                                      value={values.BirthYear}
                                       onBlur={handleBlur}
-                                      helperText={errors.FirstName}
+                                      helperText={errors.BirthYear}
                                       onChange={handleChange}
                                       error={Boolean(
-                                        touched.FirstName &&
-                                          errors.FirstName
+                                        touched.BirthYear && errors.BirthYear
                                       )}
                                       // required
                                     />
@@ -137,36 +162,254 @@ export default function Profile() {
                                   <Grid item xs={12} sm={6} md={6} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
-                                      label="First Name"
-                                      name="LastName"
-                                      value={values.LastName}
+                                      label="Height"
+                                      name="Height"
+                                      value={values.Height}
                                       onBlur={handleBlur}
-                                      helperText={errors.LastName}
+                                      helperText={errors.Height}
                                       onChange={handleChange}
                                       error={Boolean(
-                                        touched.LastName &&
-                                          errors.LastName
+                                        touched.Height && errors.Height
+                                      )}
+                                      // required
+                                    />
+                                  </Grid>
+                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                    <ModifiedTextField
+                                      fullWidth
+                                      label="Weight"
+                                      name="Weight"
+                                      value={values.Weight}
+                                      onBlur={handleBlur}
+                                      helperText={errors.Weight}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.Weight && errors.Weight
+                                      )}
+                                      // required
+                                    />
+                                  </Grid>
+                                  {/* <Grid item xs={12} sm={6} md={6} padding={1}> */}
+                                  {/* <ModifiedTextField
+                                      fullWidth
+                                      label="Gender"
+                                      name="Gender"
+                                      value={values.Gender}
+                                      onBlur={handleBlur}
+                                      helperText={errors.Gender}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.Gender &&
+                                          errors.Gender
+                                      )}
+                                      // required
+                                    /> */}
+                                  {/* </Grid> */}
+
+                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                    <ModifiedTextField
+                                      fullWidth
+                                      label="Allergies"
+                                      name="Allergies"
+                                      value={values.Allergies}
+                                      onBlur={handleBlur}
+                                      helperText={errors.Allergies}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.Allergies && errors.Allergies
                                       )}
                                       // required
                                     />
                                   </Grid>
 
-                                  <Divider />
-                                  <Button
-                                    type="submit"
-                                    variant="contained"
-                                    disabled={!(isValid || isSubmitting)}
+                                  {/* <Grid item xs={12} md={6} padding={1}>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <FormControl component="fieldset">
+                                          <Typography variant="h6">
+                                            Gender
+                                          </Typography>
+                                          <FormControlLabel
+                                            control={
+                                              <Switch
+                                                name="Gender"
+                                                checked={values.Gender}
+                                                onChange={handleChange}
+                                              />
+                                            }
+                                            label={
+                                              values.Gender ? "Yes" : "No"
+                                            }
+                                          />
+
+                                          
+                                          
+                                        </FormControl>
+                                      </Grid> */}
+
+                                  <Grid
+                                    item
+                                    xs={12}
+                                    padding={1}
                                     sx={{
-                                      flexDirection: "column",
+                                      display: "flex",
                                       justifyContent: "center",
-                                      textAlign: "center",
-                                      margin: "auto",
-                                      borderRadius: 3,
-                                      backgroundColor:"rgb(18, 104, 18)",
+                                      alignItems: "center",
                                     }}
                                   >
-                                    Create Profile
-                                  </Button>
+                                    <FormControl>
+                                      <FormLabel id="demo-radio-buttons-group-label">
+                                        Gender
+                                      </FormLabel>
+                                      <RadioGroup
+                                        aria-labelledby="demo-radio-buttons-group-label"
+                                        defaultValue="female"
+                                        name="Gender"
+                                        onChange={handleChange}
+                                        row
+                                      >
+                                        <Box>
+                                          {/* <Grid item xs={12} md={2} padding={1}> */}
+                                          <FormControlLabel
+                                            value="female"
+                                            control={<Radio size="small" />}
+                                            label="Female"
+                                          />
+                                          {/* </Grid> */}
+                                          {/* <Grid item xs={12} md={2} padding={1}> */}
+                                          <FormControlLabel
+                                            value="male"
+                                            control={<Radio size="small" />}
+                                            label="Male"
+                                          />
+                                          {/* </Grid> */}
+                                          {/* <Grid item xs={12} md={2} padding={1}> */}
+                                          <FormControlLabel
+                                            value="other"
+                                            control={<Radio size="small" />}
+                                            label="Other"
+                                          />
+                                          {/* </Grid> */}
+                                        </Box>
+                                      </RadioGroup>
+                                    </FormControl>
+                                  </Grid>
+
+                                  <Grid
+                                    item
+                                    xs={12}
+                                    padding={1}
+                                    sx={{
+                                      display: "flex",
+                                      justifyContent: "center",
+                                      alignItems: "center",
+                                    }}
+                                  >
+                                    <FormControl component="fieldset">
+                                      <FormLabel component="legend">
+                                        Are you having
+                                      </FormLabel>
+                                      <FormGroup row>
+                                        <FormControlLabel
+                                          control={<Checkbox size="small" />}
+                                          label="Diabetes"
+                                          name="sick"
+                                          value="Diabetes"
+                                          onChange={handleChange}
+                                        />
+                                        <FormControlLabel
+                                          control={<Checkbox size="small" />}
+                                          label="Cholesterol"
+                                          name="sick"
+                                          value="Cholesterol"
+                                          onChange={handleChange}
+                                        />
+                                        <FormControlLabel
+                                          control={<Checkbox size="small" />}
+                                          label="Hypertension"
+                                          name="sick"
+                                          value="Hypertension"
+                                          onChange={handleChange}
+                                        />
+                                        {/* Add more checkboxes as needed */}
+                                      </FormGroup>
+                                    </FormControl>
+                                  </Grid>
+
+                                  <Divider />
+                                  <Grid
+                                    item
+                                    xs={12}
+                                    sm={12}
+                                    md={12}
+                                    padding={1}
+                                    sx={{ display: "flex" }}
+                                  >
+                                    <Button
+                                      type="submit"
+                                      variant="contained"
+                                      disabled={!(isValid || isSubmitting)}
+                                      sx={{
+                                        flexDirection: "column",
+                                        justifyContent: "center",
+                                        textAlign: "center",
+                                        margin: "auto",
+                                        borderRadius: 3,
+                                        backgroundColor: "rgb(18, 104, 18)",
+                                      }}
+                                    >
+                                      Create Profile
+                                    </Button>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    xs={12}
+                                    sm={12}
+                                    md={12}
+                                    padding={1}
+                                    // sx={{ display: "flex" }}
+                                  >
+                                    <Box
+                                      sx={{
+                                        marginTop: 2,
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                      }}
+                                    >
+                                      <Button
+                                        disabled={isSubmitting}
+                                        type="submit"
+                                        variant="text"
+                                        fullWidth
+                                        onClick={() => {
+                                          navigate("/AddFamilyMembers");
+                                        }}
+                                        sx={{
+                                          borderRadius: 3,
+                                          fontSize: 10,
+                                          color: "rgb(18, 104, 18)",
+                                          // backgroundColor: "rgb(18, 104, 18)",
+                                        }}
+                                      >
+                                        Update Your Profile
+                                      </Button>
+                                      <Button
+                                        disabled={isSubmitting}
+                                        type="submit"
+                                        variant="text"
+                                        fullWidth
+                                        onClick={() => {
+                                          navigate("/");
+                                        }}
+                                        sx={{
+                                          borderRadius: 3,
+                                          // backgroundColor: "rgb(18, 104, 18)",
+                                        }}
+                                      >
+                                       Cancel
+                                      </Button>
+                                    </Box>
+                                  </Grid>
                                 </Grid>
                               </Box>
                             </CardContent>
@@ -182,5 +425,5 @@ export default function Profile() {
         </Formik>
       </Card>
     </>
-  )
+  );
 }
