@@ -1,66 +1,42 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  Checkbox,
-  Container,
-  Divider,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Grid,
-  IconButton,
-  InputAdornment,
-  Paper,
-  Radio,
-  RadioGroup,
-  Stack,
-  Switch,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
-import React, { useState } from "react";
-import { ModifiedTextField } from "../Theam/Theam";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useTheme } from "@emotion/react";
+import { Box, Button, Card, CardContent, CardHeader, Checkbox, Container, Divider, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, Radio, RadioGroup, Stack } from '@mui/material';
+import React from 'react'
+import { ModifiedTextField } from '../Theam/Theam';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
-import { Form, Formik } from "formik";
+import {Form, Formik } from 'formik';
 
-export default function Profile() {
-  const navigate = useNavigate();
+export default function AddFamilyMembers() {
+    const navigate = useNavigate();
 
-  const initialValues = {
-    // departmentID: "",
-    BirthYear: "",
-    Height: "",
-    Weight: "",
-    Gender: "",
-    Allergies: "",
-    sick: [],
-  };
-
-  const validationSchema = Yup.object().shape({
-    // departmentID: Yup.string().required("Emplyee ID is required"),
-    BirthYear: Yup.string().required("First BirthYear is required"),
-    Height: Yup.string().required("Last Height is required"),
-    Weight: Yup.string().required("First Weight is required"),
-    // Gender: Yup.boolean().required("Gender is required"),
-    Allergies: Yup.string().required("First Allergies is required"),
-    // sick: Yup.array().min(1, "Select at least one sickness"),
-  });
-
-  const handleCreating = (values) => {
-    console.log("valuse : ", values);
-  };
-
+    const initialValues = {
+      // departmentID: "",
+      BirthYear: "",
+      Height: "",
+      Weight: "",
+      Gender: "",
+      Allergies: "",
+      NickName:"",
+      ExtracurricularActivities:"",
+      sick: [],
+    };
+  
+    const validationSchema = Yup.object().shape({
+      // departmentID: Yup.string().required("Emplyee ID is required"),
+      BirthYear: Yup.string().required("First Birth Year is required"),
+      Height: Yup.string().required("Last Height is required"),
+      Weight: Yup.string().required("First Weight is required"),
+      // Gender: Yup.boolean().required("Gender is required"),
+      Allergies: Yup.string().required("First Allergies is required"),
+      // sick: Yup.array().min(1, "Select at least one sickness"),
+      NickName:Yup.string().required("First Nick Name is required"),
+    });
+  
+    const handleCreating = (values) => {
+      console.log("valuse : ", values);
+    };
   return (
     <>
-      <Card
+        <Card
         sx={{
           borderRadius: 10,
           backgroundColor: "rgb(180, 180, 179, 0.5 )",
@@ -127,7 +103,7 @@ export default function Profile() {
                       >
                         <Grid item xs={12} md={7} lg={7} xl={8} margin={2}>
                           <Card sx={{ borderRadius: 6 }} elevation={10}>
-                            <CardHeader title="Update PROFILE"></CardHeader>
+                            <CardHeader title="ADD Member"></CardHeader>
                             <hr
                               style={{
                                 color: "white",
@@ -144,6 +120,21 @@ export default function Profile() {
                                 }}
                               >
                                 <Grid container spacing={1}>
+                                <Grid item xs={12} sm={6} md={6} padding={1}>
+                                    <ModifiedTextField
+                                      fullWidth
+                                      label="Nick Name"
+                                      name="NickName"
+                                      value={values.NickName}
+                                      onBlur={handleBlur}
+                                      helperText={errors.NickName}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.NickName && errors.NickName
+                                      )}
+                                      // required
+                                    />
+                                  </Grid>
                                   <Grid item xs={12} sm={6} md={6} padding={1}>
                                     <ModifiedTextField
                                       fullWidth
@@ -202,6 +193,22 @@ export default function Profile() {
                                       onChange={handleChange}
                                       error={Boolean(
                                         touched.Allergies && errors.Allergies
+                                      )}
+                                      // required
+                                    />
+                                  </Grid>
+
+                                  <Grid item xs={12} sm={6} md={6} padding={1}>
+                                    <ModifiedTextField
+                                      fullWidth
+                                      label="ExtracurricularActivities"
+                                      name="ExtracurricularActivities"
+                                      value={values.ExtracurricularActivities}
+                                      onBlur={handleBlur}
+                                      helperText={errors.ExtracurricularActivities}
+                                      onChange={handleChange}
+                                      error={Boolean(
+                                        touched.ExtracurricularActivities && errors.ExtracurricularActivities
                                       )}
                                       // required
                                     />
@@ -319,7 +326,7 @@ export default function Profile() {
                                         backgroundColor: "rgb(18, 104, 18)",
                                       }}
                                     >
-                                      Create Profile
+                                      Add More Family Member
                                     </Button>
                                   </Grid>
                                   <Grid
@@ -338,12 +345,12 @@ export default function Profile() {
                                       }}
                                     >
                                       <Button
-                                        disabled={isSubmitting}
+                                        // disabled={isSubmitting}
                                         // type="submit"
                                         variant="text"
                                         fullWidth
                                         onClick={() => {
-                                          navigate("/AddFamilyMembers");
+                                          navigate("/Profile");
                                         }}
                                         sx={{
                                           borderRadius: 3,
@@ -352,10 +359,10 @@ export default function Profile() {
                                           // backgroundColor: "rgb(18, 104, 18)",
                                         }}
                                       >
-                                        Add Family Members
+                                        Update My Profile
                                       </Button>
                                       <Button
-                                        disabled={isSubmitting}
+                                        // disabled={isSubmitting}
                                         // type="submit"
                                         variant="text"
                                         fullWidth
@@ -364,6 +371,7 @@ export default function Profile() {
                                         }}
                                         sx={{
                                           borderRadius: 3,
+                                        //   color: "rgb(18, 104, 18)",
                                           // backgroundColor: "rgb(18, 104, 18)",
                                         }}
                                       >
@@ -386,5 +394,5 @@ export default function Profile() {
         </Formik>
       </Card>
     </>
-  );
+  )
 }

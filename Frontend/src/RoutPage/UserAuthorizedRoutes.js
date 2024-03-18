@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Profile from "../Pages/Profile";
 import SingUp from "../Pages/SingUp";
 import SingUpOTP from "../Pages/SingUpOTP";
+import AddFamilyMembers from "../Pages/AddFamilyMembers";
 // import Dashbord from "../Pages/Dashbord";
 
 
@@ -57,6 +58,10 @@ const UserAuthorizedRoutes = [
       {
         path:"/SingUpOTP",
         element:<SingUpOTP/>
+      },
+      {
+        path:"/AddFamilyMembers",
+        element:<AddFamilyMembers/>
       },
       {
         path:"*",
