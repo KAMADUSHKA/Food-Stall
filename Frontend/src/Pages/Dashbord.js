@@ -8,13 +8,19 @@ import {
   CardActionArea,
   CardContent,
   CardHeader,
+  CardMedia,
   Container,
   Grid,
+  IconButton,
   ImageList,
   ImageListItem,
   Tooltip,
   Typography,
 } from "@mui/material";
+import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import SkipNextIcon from "@mui/icons-material/SkipNext";
+
 import "../Style/Style.css";
 import { Bolt, Key } from "@mui/icons-material";
 import P1 from "../Image/P1.jpg";
@@ -23,6 +29,7 @@ import P3 from "../Image/P3.jpg";
 import P4 from "../Image/P4.jpg";
 import P5 from "../Image/P5.jpg";
 import P6 from "../Image/P6.jpg";
+import { useTheme } from "@emotion/react";
 
 const CardData = [
   {
@@ -109,6 +116,8 @@ const NutritionistData = [
 ];
 
 export default function Dashbord() {
+  const theme = useTheme();
+
   const cardData = (item, key) => (
     <Grid key={Key} item xs={12} sm={6} md={4} lg={4} xl={3}>
       <Card
@@ -255,6 +264,35 @@ export default function Dashbord() {
     </Grid>
   );
 
+  // const HealthGoals = (item, key) => (
+  //   <Grid key={Key} item xs={12} sm={12} md={6} lg={6} xl={6}>
+  //     <Card sx={{ display: "flex", Width: 345, height: 280, borderRadius: 6 }}>
+  //       <Box sx={{ display: "flex", flexDirection: "column" }}>
+  //         <CardContent sx={{ flex: "1 0 auto" }}>
+  //           <Typography component="div" variant="h5">
+  //             WEIGHT LOSS
+  //           </Typography>
+  //           <Typography
+  //             variant="subtitle1"
+  //             color="text.secondary"
+  //             component="div"
+  //           >
+  //             Forget starving yourself to lose weight. Let us introduce you to a
+  //             healthy regime where you make smart food choices without having to
+  //             skip them to lose weight.
+  //           </Typography>
+  //         </CardContent>
+  //       </Box>
+  //       <CardMedia
+  //         component="img"
+  //         sx={{ width: 180 }}
+  //         image="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+  //         alt="Live from space album cover"
+  //       />
+  //     </Card>
+  //   </Grid>;
+  // );
+
   return (
     <>
       <Box
@@ -273,7 +311,6 @@ export default function Dashbord() {
           showThumbs={false}
           showStatus={false}
           // dotColor="rgba(0, 255, 0)"
-        
         >
           <div>
             <img
@@ -382,6 +419,125 @@ export default function Dashbord() {
         <br />
         <br />
         <br />
+        <Grid container spacing={2} marginTop={3} marginBottom={3}>
+          <Grid key={Key} item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Card
+              sx={{ display: "flex", Width: 345, height: 280, borderRadius: 6 }}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Typography component="div" variant="h5">
+                    WEIGHT LOSS
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    Forget starving yourself to lose weight. Let us introduce
+                    you to a healthy regime where you make smart food choices
+                    without having to skip them to lose weight.
+                  </Typography>
+                </CardContent>
+              </Box>
+              <CardMedia
+                component="img"
+                sx={{ width: 180 }}
+                image="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                alt="Live from space album cover"
+              />
+            </Card>
+          </Grid>
+          <Grid key={Key} item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Card
+              sx={{ display: "flex", Width: 345, height: 280, borderRadius: 6 }}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Typography component="div" variant="h5">
+                    ATHLETE
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    When you are an athlete, you need a meal plan that will
+                    support your rigorous activities, which is exactly what we
+                    serve.
+                  </Typography>
+                </CardContent>
+              </Box>
+              <CardMedia
+                component="img"
+                sx={{ width: 180 }}
+                image="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                alt="Live from space album cover"
+              />
+            </Card>
+          </Grid>
+          <Grid key={Key} item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Card
+              sx={{ display: "flex", Width: 345, height: 280, borderRadius: 6 }}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Typography component="div" variant="h5">
+                    WELLNESS
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    Lead a wholesome life with our wellness meal plan that will
+                    enhance the quality of your life, keeping you healthy across
+                    the board.
+                  </Typography>
+                </CardContent>
+              </Box>
+              <CardMedia
+                component="img"
+                sx={{ width: 180 }}
+                image="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                alt="Live from space album cover"
+              />
+            </Card>
+          </Grid>
+          <Grid key={Key} item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Card
+              sx={{ display: "flex", Width: 345, height: 280, borderRadius: 6 }}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardContent sx={{ flex: "1 0 auto" }}>
+                  <Typography component="div" variant="h5">
+                    MUSCLE GAIN
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    color="text.secondary"
+                    component="div"
+                  >
+                    Give your muscles the necessary boost with our
+                    muscle-enhancing food through our meal plan which will
+                    accelerate your fitness journey with remarkable positive
+                    results.
+                  </Typography>
+                </CardContent>
+              </Box>
+              <CardMedia
+                component="img"
+                sx={{ width: 180 }}
+                image="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                alt="Live from space album cover"
+              />
+            </Card>
+          </Grid>
+        </Grid>
+
+        {/* <Grid container spacing={2} marginTop={3} marginBottom={3}>
+          {CardData.map((card, key) => HealthGoals(card, key))}
+        </Grid> */}
         <br />
         <br />
         <br />
@@ -405,8 +561,6 @@ export default function Dashbord() {
           {/* {data.map((card) => cardData(card, card.card_id))} */}
         </Grid>
       </Container>
-
-      
     </>
   );
 }
