@@ -315,27 +315,31 @@ export default function Dashbord() {
           infiniteLoop={true}
           showThumbs={false}
           showStatus={false}
+          
           // dotColor="rgba(0, 255, 0)"
         >
           <div>
             <img
               src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
-              height="auto"
+              // height="auto"
               width="200px"
+              alt=""
             />
           </div>
           <div>
             <img
               src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
-              height="auto"
+              // height="auto"
               width="200px"
+              alt=""
             />
           </div>
           <div>
             <img
               src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
-              height="auto"
+              // height="auto"
               width="200px"
+              alt=""
             />
           </div>
         </Carousel>
@@ -360,12 +364,13 @@ export default function Dashbord() {
         <br />
         <br />
         <Grid container spacing={1}>
-          <Grid item xs={12}>
+          <Grid item xs={12} >
             <ImageList
-              variant="woven"
+              variant="masonry"
+              
               cols={3}
               gap={60}
-              sx={{ width: "100%", maxWidth: "auto" }}
+              sx={{ width: "100%", maxWidth: "auto", }}
             >
               {itemData.map((item) => (
                 <ImageListItem key={item.title}>
@@ -516,7 +521,7 @@ export default function Dashbord() {
                 <CardContent sx={{ flex: "1 0 auto" }}>
                 <Box
                     sx={{
-                      backgroundColor: "rgba(255, 99, 71, 0.3)",
+                      backgroundColor: "rgb(106, 90, 205, 0.3)",
                       
                       padding: 1.5,
                       // paddingBottom:4,
@@ -553,7 +558,7 @@ export default function Dashbord() {
                 <CardContent sx={{ flex: "1 0 auto" }}>
                 <Box
                     sx={{
-                      backgroundColor: "rgb(60, 179, 113, 0.3)",
+                      backgroundColor: "rgb(255, 152, 10, 0.3)",
                       
                       padding: 1.5,
                       // paddingBottom:4,

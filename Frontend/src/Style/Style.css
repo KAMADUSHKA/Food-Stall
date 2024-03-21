@@ -279,11 +279,14 @@
 /*     */
 
 .main-slide {
-    padding-top: 30px;
+    /* padding-top: 30px; */
+
+    
 }
 
 .carousel .slider-wrapper {
     width: 85%;
+    min-height:80vh
 }
 
 .main-slide .carousel .control-dots .dot {
