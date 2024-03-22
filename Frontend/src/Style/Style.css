@@ -284,6 +284,7 @@
     
 }
 
+
 .carousel .slider-wrapper {
     width: 85%;
     min-height:80vh
@@ -296,12 +297,12 @@
 }
 
 
-/* @media (max-width: 600px) {
-    .custom-navbar {
-      
+@media (max-width: 850px) {
+    .main-slide .carousel .control-dots .dot {
+        display: none;
     }
     
-  } */
+  }
 
 /* .active{
     background-color: aquamarine;

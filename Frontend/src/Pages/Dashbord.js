@@ -302,12 +302,14 @@ export default function Dashbord() {
     <>
       <Box
         sx={{
-          padding: 10,
+          
+          padding: { xs: 2, lg: 12 },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
+        
         {/* <Carousel className="main-slide" showThumbs={false} showStatus={false} style={{ maxWidth: '60%' }}> */}
         <Carousel
           className="main-slide"
@@ -343,6 +345,7 @@ export default function Dashbord() {
             />
           </div>
         </Carousel>
+        
       </Box>
 
       <br />
