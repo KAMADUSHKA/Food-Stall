@@ -35,6 +35,7 @@ import H3 from "../Image/H3.png";
 import H4 from "../Image/H4.png";
 import { useTheme } from "@emotion/react";
 import { blue } from "@mui/material/colors";
+import OurProces from "../MUI/OurProces";
 
 const CardData = [
   {
@@ -170,22 +171,24 @@ export default function Dashbord() {
           </Box>
         </Box>
         <CardActionArea>
+          <container>
           <Box
             sx={{
-              backgroundColor: "rgba(0, 255, 0, 0.3)",
-              padding: "0px 1px 3px 1px",
+              backgroundColor: "rgb(18, 104, 18)",
+              padding: "0px 0.5px 2px 0.5px",
               borderRadius: "10px",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
-              margin: "0px 5px 2px 5px",
+              margin: "0px 10px 2px 10px",
             }}
           >
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{color:"white"}}>
               eprice is {item.price}
             </Typography>
           </Box>
+          </container>
         </CardActionArea>
       </Card>
     </Grid>
@@ -245,6 +248,7 @@ export default function Dashbord() {
                 height="auto"
                 width="300px"
                 style={{ borderRadius: "10px" }}
+                alt=""
               />
               {/* <div className="overlay"></div> */}
               <Typography
@@ -348,6 +352,10 @@ export default function Dashbord() {
       <br />
       <br />
       <Container>
+        {/* OUR PROCESS  */}
+
+        
+
         <Typography
           variant="h2"
           align="center"
@@ -363,7 +371,8 @@ export default function Dashbord() {
         </Typography>
         <br />
         <br />
-        <Grid container spacing={1}>
+        <OurProces/>
+        {/* <Grid container spacing={1}>
           <Grid item xs={12}>
             <ImageList
               variant="masonry"
@@ -386,12 +395,15 @@ export default function Dashbord() {
               ))}
             </ImageList>
           </Grid>
-        </Grid>
+        </Grid> */}
         <br />
         <br />
         <br />
         <br />
         <br />
+
+        {/* NUTRITION MEAL PLANS  */}
+
         <Typography
           variant="h2"
           align="center"
@@ -412,6 +424,9 @@ export default function Dashbord() {
         <br />
         <br />
         <br />
+
+        {/* YOUR HEALTH GOALS  */}
+
         <Typography
           variant="h2"
           align="center"
@@ -464,17 +479,17 @@ export default function Dashbord() {
                     </Typography>
                   </Box>
                   <CardMedia
-                component="img"
-                sx={{
-                  height: 235,
-                  width: 240,
-                  display: { xs: "flex", sm: "none" },
-                  marginTop:1,
-                  marginLeft:11
-                }}
-                image={H1}
-                // alt="Live from space album cover"
-              />
+                    component="img"
+                    sx={{
+                      height: 235,
+                      width: 240,
+                      display: { xs: "flex", sm: "none" },
+                      marginTop: 1,
+                      marginLeft: 11,
+                    }}
+                    image={H1}
+                    // alt="Live from space album cover"
+                  />
                 </CardContent>
               </Box>
               <CardMedia
@@ -524,14 +539,17 @@ export default function Dashbord() {
                     </Typography>
                   </Box>
                   <CardMedia
-                component="img"
-                sx={{ width: 340, display: { xs: "flex", sm: "none" }, marginTop:1, marginLeft:9 }}
-                image={H2}
-                // alt="Live from space album cover"
-              />
+                    component="img"
+                    sx={{
+                      width: 340,
+                      display: { xs: "flex", sm: "none" },
+                      marginTop: 1,
+                      marginLeft: 9,
+                    }}
+                    image={H2}
+                    // alt="Live from space album cover"
+                  />
                 </CardContent>
-                
-                
               </Box>
               <CardMedia
                 component="img"
@@ -576,11 +594,16 @@ export default function Dashbord() {
                     </Typography>
                   </Box>
                   <CardMedia
-                component="img"
-                sx={{ width: 332, display: { xs: "flex", sm: "none" }, marginTop:1, marginLeft:11 }}
-                image={H3}
-                // alt="Live from space album cover"
-              />
+                    component="img"
+                    sx={{
+                      width: 332,
+                      display: { xs: "flex", sm: "none" },
+                      marginTop: 1,
+                      marginLeft: 11,
+                    }}
+                    image={H3}
+                    // alt="Live from space album cover"
+                  />
                 </CardContent>
               </Box>
               <CardMedia
@@ -632,7 +655,7 @@ export default function Dashbord() {
                       marginTop: 1,
                       width: 332,
                       display: { xs: "flex", sm: "none" },
-                      marginLeft:10
+                      marginLeft: 10,
                     }}
                     image={H4}
                     // alt="Live from space album cover"
@@ -655,6 +678,9 @@ export default function Dashbord() {
         <br />
         <br />
         <br />
+
+        {/*  Meal Plans  */}
+
         <Typography
           variant="h2"
           align="center"
