@@ -172,22 +172,22 @@ export default function Dashbord() {
         </Box>
         <CardActionArea>
           <container>
-          <Box
-            sx={{
-              backgroundColor: "rgb(18, 104, 18)",
-              padding: "0px 0.5px 2px 0.5px",
-              borderRadius: "10px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-              margin: "0px 10px 2px 10px",
-            }}
-          >
-            <Typography variant="h5" gutterBottom sx={{color:"white"}}>
-              eprice is {item.price}
-            </Typography>
-          </Box>
+            <Box
+              sx={{
+                backgroundColor: "rgb(18, 104, 18)",
+                padding: "0px 0.5px 2px 0.5px",
+                borderRadius: "10px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                margin: "0px 10px 2px 10px",
+              }}
+            >
+              <Typography variant="h5" gutterBottom sx={{ color: "white" }}>
+                eprice is {item.price}
+              </Typography>
+            </Box>
           </container>
         </CardActionArea>
       </Card>
@@ -310,6 +310,7 @@ export default function Dashbord() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+         
         }}
       >
         {/* <Carousel className="main-slide" showThumbs={false} showStatus={false} style={{ maxWidth: '60%' }}> */}
@@ -354,8 +355,6 @@ export default function Dashbord() {
       <Container>
         {/* OUR PROCESS  */}
 
-        
-
         <Typography
           variant="h2"
           align="center"
@@ -371,7 +370,7 @@ export default function Dashbord() {
         </Typography>
         <br />
         <br />
-        <OurProces/>
+        <OurProces />
         {/* <Grid container spacing={1}>
           <Grid item xs={12}>
             <ImageList

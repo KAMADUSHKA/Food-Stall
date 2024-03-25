@@ -7,6 +7,12 @@ import {
     Grid,
     Typography,
   } from "@mui/material";
+  import P1 from "../Image/P1.jpg"
+  import P2 from "../Image/P2.jpg"
+  import P3 from "../Image/P3.jpg"
+  import P4 from "../Image/P4.jpg"
+  import P5 from "../Image/P5.jpg"
+  import P6 from "../Image/P6.jpg"
 
 export default function OurProces() {
   return (
@@ -50,13 +56,13 @@ export default function OurProces() {
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: 6,
-                  marginTop:2
+                  marginTop:5
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                  src={P1}
                   height="auto"
-                  width="380px"
+                  width="300px"
                   style={{ borderRadius: '10px', maxWidth: '100%', height: 'auto' }}
                   alt=""
                   
@@ -104,12 +110,13 @@ export default function OurProces() {
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: 5,
+                  marginTop:2
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                  src={P2}
                   height="auto"
-                  width="300px"
+                  width="265px"
                   style={{ borderRadius: '10px', maxWidth: '100%', height: 'auto' }}
                   alt=""
                 />
@@ -157,13 +164,13 @@ export default function OurProces() {
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: 5,
-                  marginTop:4
+                  marginTop:5
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                  src={P3}
                   height="auto"
-                  width="350px"
+                  width="280px"
                   style={{ borderRadius: '10px', maxWidth: '100%', height: 'auto' }}
                   alt=""
                 />
@@ -208,13 +215,13 @@ export default function OurProces() {
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: 5,
-                  marginTop:3
+                  marginTop:5
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                  src={P4}
                   height="auto"
-                  width="400px"
+                  width="280px"
                   style={{ borderRadius: '10px', maxWidth: '100%', height: 'auto' }}
                   alt=""
                 />
@@ -259,13 +266,13 @@ export default function OurProces() {
                   justifyContent: "center",
                   alignItems: "center",
                   borderRadius: 5,
-                  marginTop:2
+                  marginTop:4.5
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                  src={P5}
                   height="auto"
-                  width="300px"
+                  width="330px"
                   style={{ borderRadius: "10px" }}
                   alt=""
                 />
@@ -315,7 +322,7 @@ export default function OurProces() {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                  src={P6}
                   height="auto"
                   width="390px"
                   style={{ borderRadius: '10px', maxWidth: '100%', height: 'auto' }}
