@@ -33,6 +33,13 @@ import H1 from "../Image/H1.webp";
 import H2 from "../Image/H2.png";
 import H3 from "../Image/H3.png";
 import H4 from "../Image/H4.png";
+import NF from "../Image/NF.jpg"
+import NC from "../Image/NC.jpg"
+import NS from "../Image/NS.jpg"
+import C1 from "../Image/C1.jpg";
+import C2 from "../Image/C2.jpg"
+import C3 from "../Image/C3.jpg"
+import C4 from "../Image/C4.jpg"
 import { useTheme } from "@emotion/react";
 import { blue } from "@mui/material/colors";
 import OurProces from "../MUI/OurProces";
@@ -108,15 +115,15 @@ const itemData = [
 ];
 const NutritionistData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    img: NS,
     title: "MySelf",
   },
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Childrem",
+    img: NC,
+    title: "Children",
   },
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    img: NF,
     title: "Family",
   },
 ];
@@ -325,7 +332,8 @@ export default function Dashbord() {
         >
           <div>
             <img
-              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+              src={C1}
+              // src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
               // height="auto"
               width="200px"
               alt=""
@@ -333,7 +341,8 @@ export default function Dashbord() {
           </div>
           <div>
             <img
-              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+              src={C2}
+              // src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
               // height="auto"
               width="200px"
               alt=""
@@ -341,7 +350,17 @@ export default function Dashbord() {
           </div>
           <div>
             <img
-              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+              src={C3}
+              // src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+              // height="auto"
+              width="200px"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src={C4}
+              // src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
               // height="auto"
               width="200px"
               alt=""
